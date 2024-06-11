@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap");
+
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #fff;
+  --background-secondary-color: #c3c7ca;
+  --draggable-color: #eaeaea;
+  --text-color: #34444f;
+  --right-color: #3ae374;
+  --wrong-color: #ff3838;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Blinker", sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.list-container {
+  margin: 0 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 250px;
+  background: var(--background-color);
+  margin: 20px auto;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+li {
+  padding: 15px;
+  margin: 5px 0;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.dragging {
+  opacity: 0.5;
+}
+
+.check-btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: var(--background-secondary-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.check-btn i {
+  margin-left: 5px;
+}
+
+.draggable-list .number {
+  background-color: var(--background-secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.draggable-list li.over .draggable {
+  background-color: var(--draggable-color);
+}
+
+.draggable-list .phone-name {
+  margin: 0 1.25rem 0 0;
+}
+
+.draggable-list li.right .phone-name {
+  color: var(--right-color);
+}
+
+.draggable-list li.wrong .phone-name {
+  color: var(--wrong-color);
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  flex: 1;
+}
+
+.check-btn {
+  background-color: var(--background-secondary-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.check-btn:focus {
+  outline: none;
+}
